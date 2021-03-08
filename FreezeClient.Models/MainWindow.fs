@@ -1,0 +1,1 @@
+﻿module FreezeClient.Models.MainWindow

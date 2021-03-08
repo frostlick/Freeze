@@ -6,4 +6,32 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\calendar.png" />
+    <None Remove="Images\cancel.png" />
+    <None Remove="Images\clock.png" />
+    <None Remove="Images\down-circle.png" />
+    <None Remove="Images\left-circle.png" />
+    <None Remove="Images\ok.png" />
+    <None Remove="Images\refresh.png" />
+    <None Remove="Images\right-circle.png" />
+    <None Remove="Images\up-circle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreezeClient.Models\FreezeClient.Models.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\calendar.png" />
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\clock.png" />
+    <Resource Include="Images\down-circle.png" />
+    <Resource Include="Images\left-circle.png" />
+    <Resource Include="Images\ok.png" />
+    <Resource Include="Images\refresh.png" />
+    <Resource Include="Images\right-circle.png" />
+    <Resource Include="Images\up-circle.png" />
+  </ItemGroup>
+
 </Project>
