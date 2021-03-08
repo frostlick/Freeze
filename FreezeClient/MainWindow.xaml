@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:FreezeClient"
         xmlns:vm="clr-namespace:FreezeClient.Models;assembly=FreezeClient.Models"
         mc:Ignorable="d"
-        d:DataContext="{x:Static vm:Program.designVm}"
-        Title="FreezeClient" Height="250" Width="600">
+        d:DataContext="{x:Static vm:MainWindow.designVm}"
+        Title="FreezeClient" Height="400" Width="800">
     <DockPanel>
         <DockPanel.Resources>
             <Style TargetType="Label">
@@ -20,12 +20,16 @@
         <Label DockPanel.Dock="Left" Width="50" Content="Left" Background="LightBlue"/>
         <Label DockPanel.Dock="Right" Width="50" Content="Right" Background="LightBlue"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0">
-            <TextBlock Text="{Binding CounterValue, StringFormat='Counter value: {0}'}" Width="110" Margin="0,5,10,5" />
-            <Button Command="{Binding Decrement}" Content="-" Margin="0,5,10,5" Width="30" />
-            <Button Command="{Binding Increment}" Content="+" Margin="0,5,10,5" Width="30" />
-            <TextBlock Text="{Binding StepSize, StringFormat='Step size: {0}'}" Width="70" Margin="0,5,10,5" />
-            <Slider Value="{Binding StepSize}" TickFrequency="1" Maximum="10" Minimum="1" IsSnapToTickEnabled="True" Width="100" Margin="0,5,10,5" />
-            <Button Command="{Binding Reset}" Content="Reset" Margin="0,5,10,5" Width="50" />
+            <StackPanel>
+                <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="100" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,5,10,5" />
+                <TextBlock Text="{Binding StatusMsg}" TextWrapping="Wrap" />
+                <TextBlock Text="Clock (to show that dialogs do not block the dispatch loop):" />
+                <TextBlock Text="{Binding CurrentTime}" />
+            </StackPanel>
+            <StackPanel>
+                <Button Command="{Binding Save}" Content="Save" Height="20" Margin="0,5,10,5" Width="50" />
+                <Button Command="{Binding Load}" Content="Load" Height="20" Margin="0,5,10,5" Width="50" />
+            </StackPanel>
         </StackPanel>
     </DockPanel>
 </Window>
